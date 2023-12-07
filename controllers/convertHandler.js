@@ -1,9 +1,9 @@
 function ConvertHandler() {
 
   this.getNum = function (input) {
-    let result = input.match(/\d+\.\d+/)[0];
+    let result = input.match(/\d+\.\d+/);
 
-    return result;
+    return result[0];
   };
 
   this.getUnit = function (input) {
