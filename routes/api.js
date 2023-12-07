@@ -18,10 +18,10 @@ module.exports = function (app) {
       res.send("invalid unit")
     }
 
-    let returNum = convertHandler.convert(initNum, initUnit);
+    let returnNum = convertHandler.convert(initNum, initUnit);
     let returnUnit = convertHandler.getReturnUnit(initUnit);
     let returnString = convertHandler.getString(initNum, initUnit, returNum, returnUnit);
 
-    res.json({ initNum, initUnit, returNum, returnUnit, string: returnString })
+    res.json({ initNum, initUnit, returnNum, returnUnit, string: returnString })
   })
 }
