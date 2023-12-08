@@ -1,9 +1,28 @@
 function ConvertHandler() {
 
   this.getNum = function (input) {
-    let result = input.match(/\d+\.\d+/);
+    // get a whole number
+    let match = input.match(/[.\d\/]+/g);
+    // check if the input is not a number
+    if(!match) {
+        result = "1"; 
+    } else if (match) {
+        result = match[0]
+    }
+    // fractional number input
+    let nums = result.split('/');
+    if(nums.length > 2) {
+      return undefined;
+    }
+    if(!nums) return undefined;
+    let num1 = nums[0];
+    let num2 = nums[1] || "1";
+    result = parseFloat(num1) / parseFloat(num2);
+    if(isNaN(num1) || isNaN(num2)) {
+      return undefined;
+    }
 
-    return result[0];
+    return result;
   };
 
   this.getUnit = function (input) {
