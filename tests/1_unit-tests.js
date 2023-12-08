@@ -78,6 +78,43 @@ suite('Unit Tests', function(){
 		test('Invalid unit input', function(done) {
 			assert.equal(convertHandler.getUnit("55miles"), undefined);
 			done();
+		});
+
+		test('Return the correct unit', function(done) {
+			let input = [
+				"kg",
+				"l",
+				"mi",
+				"lbs",
+				"gal",
+				"km" 
+			]
+			let output = [
+				"lbs",
+				"gal",
+				"km",
+				"kg",
+				"L",
+				"mi"
+			]
+
+			input.forEach((el, i) => {
+				assert.equal(convertHandler.getReturnUnit(el), output[i]);
+			});
+			done();
 		})
+
+		// case 'kg':
+		// 	return 'lbs'
+		// case 'l':
+		// 	return 'gal'
+		// case 'mi':
+		// 	return 'km'
+		// case 'lbs':
+		// 	return 'kg'
+		// case 'gal':
+		// 	return 'L'
+		// case 'km':
+		// 	return 'mi'
 	})
 });
