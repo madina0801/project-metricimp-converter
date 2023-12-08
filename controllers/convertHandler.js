@@ -29,10 +29,6 @@ function ConvertHandler() {
     let result = input.match(/[a-zA-Z]+/)[0];
     result = result.toLowerCase();
 
-    if (result.length > 3) {
-      return false;
-    }
-
     switch (result) {
       case 'km':
         return 'km'

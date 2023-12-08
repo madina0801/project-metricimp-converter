@@ -36,5 +36,48 @@ suite('Unit Tests', function(){
 			assert.equal(convertHandler.getNum(input), 1)
 			done()
 		})
+	});
+
+	suite('Function convertHandler.getUnit', function() {
+		test('Read each valid input', function(done) {
+			let input = [
+				"gal",
+				"L",
+				"mi",
+				"km",
+				"lbs",
+				"kg",
+				"GAL",
+				"l",
+				"MI",
+				"KM",
+				"LBS",
+				"KG",
+			];
+			let output = [
+				"gal",
+				"L",
+				"mi",
+				"km",
+				"lbs",
+				"kg",
+				"gal",
+				"L",
+				"mi",
+				"km",
+				"lbs",
+				"kg",
+			];
+
+			input.forEach((el, i) => {
+				assert.equal(convertHandler.getUnit(el), output[i])
+			});
+			done();
+		});
+
+		test('Invalid unit input', function(done) {
+			assert.equal(convertHandler.getUnit("55miles"), undefined);
+			done();
+		})
 	})
 });
