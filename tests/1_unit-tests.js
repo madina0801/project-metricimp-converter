@@ -131,5 +131,62 @@ suite('Unit Tests', function () {
 			})
 			done();
 		})
-	})
+	});
+
+
+	suite('Function convertHandler.convert(num, unit)', function() {
+		// gal to l
+		test('Gal to L', function(done) {
+			let input = [7, "gal"];
+			let output = 26.4979;
+			assert.approximately(convertHandler.convert(input[0], input[1]),
+			output, 0.1);
+			done();
+		});
+
+		// l to gal
+		test('L to Gal', function(done) {
+			let input = [7, "l"];
+			let output = 1.8492;
+			assert.approximately(convertHandler.convert(input[0], input[1]),
+			output, 0.1);
+			done();
+		});
+
+		// mi to km
+		test('Mi to Km', function(done) {
+			let input = [7, "mi"];
+			let output = 11.2654;
+			assert.approximately(convertHandler.convert(input[0], input[1]),
+			output, 0.1);
+			done();
+		});
+
+		// km to mi
+		test('Km to Mi', function(done) {
+			let input = [7, "km"];
+			let output = 4.3496;
+			assert.approximately(convertHandler.convert(input[0], input[1]),
+			output, 0.1);
+			done();
+		});
+
+		// lbs to kg
+		test('Lbs to Kg', function(done) {
+			let input = [7, "lbs"];
+			let output = 3.17515;
+			assert.approximately(convertHandler.convert(input[0], input[1]),
+			output, 0.1);
+			done();
+		});
+
+		// kg to lbs
+		test('Kg to Lbs', function(done) {
+			let input = [7, "kg"];
+			let output = 15.4324;
+			assert.approximately(convertHandler.convert(input[0], input[1]),
+			output, 0.1);
+			done();
+		})
+	});
 });
