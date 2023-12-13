@@ -1,3 +1,4 @@
 # Metric-Imperial Converter
-
-This is the boilerplate for the Metric-Imperial Converter project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter
+Is a project that facilitate seamless conversion between metric and imperial units. The primary aim is to provide users with a interface where users can input a value in one unit and obtain its equivalent in another unit, thereby streamlining measurements across different systems.
+Implemented routes with Node.js. <br />
+Created unit and functional tests, using Mocha and chai.
